@@ -31,3 +31,4 @@ python3 main.py
 My github link here: https://github.com/JignabahenKalani
 
 ## Video script Link
+My output video link https://www.loom.com/share/cc7032e51bf143688812f13f8a8a1776?sid=d4e69ab0-af02-408f-80e8-107510f6c718

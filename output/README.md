@@ -1,7 +1,7 @@
-#📝 Smile NGO</h1>
+#📝 Smile NGO
 
 ## 📘 Description
-This is a non profit organization website designed to support essential funtions such as a collecting donation and providing eduction and improving access to healthcare.
+This is a non profit organization website designed to support essential functions such as collecting donation and providing a best healthcare and education.
 
 
 ## 📦 Installation
@@ -9,7 +9,7 @@ git clone https://github.com/username/repo.git
 
 
 ## 🛠️ Usage
-After cloning the repo simply open index.html in your browser to view the website.
+After cloning the repo simply open index.html in your browser to view the website 
 
 
 ## 📄 License
