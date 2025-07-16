@@ -1,7 +1,7 @@
-#📝 smie Ngo</h1>
+#📝 Smile NGO</h1>
 
 ## 📘 Description
-this is a not profit website 
+This is a non profit organization website designed to support essential funtions such as a collecting donation and providing eduction and improving access to healthcare.
 
 
 ## 📦 Installation
@@ -9,7 +9,7 @@ git clone https://github.com/username/repo.git
 
 
 ## 🛠️ Usage
-after colning open index.html file 
+After cloning the repo simply open index.html in your browser to view the website.
 
 
 ## 📄 License
@@ -46,16 +46,16 @@ MIT License - This project is licensed under the MIT License license.
 
 
 ## 🤝 Contribution
-Yes - Contributions are welcome
+Yes - Contributions are welcome.
 
 ## 👤 Author
-jigna
+Jigna Kalani
 
 
 ## 📧 Email
-jigna@j.mail.com
+jigna@gmail.com
 
 
 ## 🧾 Contribution Guidelines
- Follow standard open source contribution practices.
+ Please follow standard open source contribution practices when submitting pull requests.
 

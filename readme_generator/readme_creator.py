@@ -30,7 +30,7 @@ class ReadmeCreator:
     
     def generate_readme(self):
     
-        readme_content = f"#📝 {self.project_info['title']}</h1>\n\n"
+        readme_content = f"#📝 {self.project_info['title']}\n\n"
         readme_content += f"## 📘 Description\n{self.project_info['description']}\n\n\n"
         readme_content += f"## 📦 Installation\n{self.project_info['installation']}\n\n\n"
         readme_content += f"## 🛠️ Usage\n{self.project_info['usage']}\n\n\n"
