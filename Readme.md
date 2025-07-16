@@ -19,13 +19,13 @@ In this project, I’ll walk you through my Python project an easy-to-use, inter
 ```bash
 python3 -m venv myenv
 source myenv/bin/activate 
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Run the Generator
 
 ```bash
-python main.py
+python3 main.py
 ```
 ## Github Repo
 My github link here: https://github.com/JignabahenKalani
