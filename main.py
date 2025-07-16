@@ -1,6 +1,7 @@
 from rich.console import Console
 from rich.panel import Panel
 from rich.progress import track
+from rich.align import Align
 import time
 import os
 from readme_generator.prompts import get_project_prompts
@@ -20,7 +21,7 @@ def loading_simulation(message):
         time.sleep(0.3)
 
 def main():
-    console.print(Panel("[bold blue center]📄 Welcome to the README Generator[/bold blue center]", subtitle="By Jigna Kalani", border_style="bold dotted"))
+    console.print(Align.center(Panel("[bold blue]📄 Welcome to the README Generator[/bold blue]", subtitle="By Jigna Kalani", border_style="bold magenta")))
 
     project_info = get_project_prompts()
 
