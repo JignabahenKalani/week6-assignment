@@ -26,38 +26,48 @@ class EmailValidator(Validator):
             
 def get_project_prompts():
     title = inquirer.text(
-        message=" Enter your Project Title:",            validate=MinLengthValidator(5, "Project title cannot be empty.")
+        message=" Enter your Project Title:",           
+        validate=MinLengthValidator(5, "Project title cannot be empty.")
     ).execute()
         
     description = inquirer.text(
-        message="Enter your Project Description:",            validate=MinLengthValidator(20, "Description must be at least 20 characters.")
+        message="Enter your Project Description:",            
+        validate=MinLengthValidator(20, "Description must be at least 20 characters.")
     ).execute()
 
     installation = inquirer.text(
-        message="Enter Installation Instructions:",
+        message=" Enter Installation Instructions:",
+        instruction="e.g. git clone https://github.com/username/repo.git",
+        default="git clone https://github.com/username/repo.git",
         validate=MinLengthValidator(10,"Installation instractions must be at least 10 characters.")
     ).execute()
 
     usage = inquirer.text(
-        message="Enter Usage Instructions:",
+        message=" Enter Usage Instructions:",
         validate=MinLengthValidator(10, "Usage instructions must be at least 10 characters.")
     ).execute()
 
     license = inquirer.select(
-        message="Select the License:",
+        message=" Select the License:",
         choices=[
             "MIT License",
             "GNU General Public License v3.0",
             "Apache License 2.0",
-            "BSC 3-Clause License",
+            "BSd 3-Clause License",
             "Creative Commons Zero v1.0 Universal",
             Separator(),
             "No License"
         ]
     ).execute()
+
+    if license != "No License":
+        license_line = f"This project is licensed under the {license} license."
+    else:
+        license_line = "This project is not licensed."
+
     
     features = inquirer.checkbox(
-        message="Select the Features:",
+        message=" Select the Features:",
         choices=[
             "User Authentication",
             "Data Visualization",          
@@ -73,9 +83,9 @@ def get_project_prompts():
     ).execute()
 
     technologies = inquirer.checkbox(
-        message="Select the Technologies Used:",
+        message=" Select the Technologies Used:",
         choices=[
-            "HTML5"
+            "HTML5",
             "CSS3",
             "Bootstrap 5",
             "JavaScript",
@@ -89,58 +99,67 @@ def get_project_prompts():
     ).execute()
 
     tests_responsive = inquirer.checkbox(
-        message="Select if responsive testing is supported.",
+        message=" Select if responsive testing is supported.",
         choices=[
-            "Mobile Devices"
-            "Laptops"
+            "Mobile Devices",
+            "Laptops",
             "Desktops"
         ]
     ).execute()
         
     tests = inquirer.text(
-        message="Enter Test Instruction:",
-        default="No specific test cases provided yet."
+        message=" Enter Test Instruction:",
+        default=" No specific test cases provided yet."
     ).execute()
 
+
     contribution = inquirer.select(
-        message="Would you like others to contribute to your project?",
+        message=" Would you like others to contribute to your project?",
         choices=["Yes", "No"]
     ).execute()
+
+    if contribution == "Yes":
+        contribution_line = "Contributions are welcome."
+    else:
+        contribution_line = "This project is not open to contributions at the moment."
     
+
     contribution_guidelines = inquirer.text(
-        message="Enter Contribution Guidelines:",
-        default="Follow standard open source contribution practices."
+        message=" Enter Contribution Guidelines:",
+        default=" Please follow standard open source contribution practices when submitting pull requests."
     ).execute()
 
     author = inquirer.text(
-        message="Enter Author Name:",
+        message=" Enter Author Name:",
         validate=MinLengthValidator(3, "Please enter a valid author name (min 3 characters).")
     ).execute()
 
     email = inquirer.text(
-        message="Enter Contact Email:",
+        message=" Enter Contact Email:",
         validate=EmailValidator()
     ).execute()
 
     confirm = inquirer.confirm(
-        message="Do you want to generate the README file?",
+        message=" Do you want to generate the README file?",
         default=True
     ).execute()
     
+
     return{
         "title": title,
         "description": description,
         "installation": installation,
         "usage": usage,
         "license": license,
+        "license_line": license_line,
         "features": features,
         "technologies": technologies,
         "test_responsive" : tests_responsive,
         "tests": tests,
         "contribution": contribution,
+        "contribution_line": contribution_line,
         "contribution_guidelines": contribution_guidelines,
         "author": author,
         "email": email,
         "confirm": confirm
     }
-        

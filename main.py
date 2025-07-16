@@ -2,6 +2,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.progress import track
 from rich.align import Align
+from rich import box
 import time
 import os
 from readme_generator.prompts import get_project_prompts
@@ -21,8 +22,8 @@ def loading_simulation(message):
         time.sleep(0.3)
 
 def main():
-    console.print(Align.center(Panel("[bold blue]📄 Welcome to the README Generator[/bold blue]", subtitle="By Jigna Kalani", border_style="bold magenta")))
-
+    console.print(Panel(Align.center("\n  [bold bright_blue]📄 WELCOME TO THE README GENERATOR [/bold bright_blue]  \n"), subtitle="[italic]By Jigna Kalani[/italic]",border_style="bold magenta",width=console.size.width,expand=True,box=box.DOUBLE))
+    
     project_info = get_project_prompts()
 
     if not project_info.get("confirm",False):
